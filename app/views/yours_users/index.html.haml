@@ -1,0 +1,15 @@
+%h1 yours予約設定情報
+= link_to '新規登録', new_yours_user_path, class: 'btn btn-primary'
+
+.mb-3
+%table.table.table-hover
+  %thead.thead-default
+    %tr
+      %th= YoursUser.human_attribute_name(:email)
+      %th= YoursUser.human_attribute_name(:start_time)
+      %th= YoursUser.human_attribute_name(:end_time)
+  %tbody
+    %tr
+      %td= @yours_user[:login_id]
+      %td= @yours_user[:start_time].strftime("%H:%M").split(":").last
+      %td= @yours_user[:end_time]
